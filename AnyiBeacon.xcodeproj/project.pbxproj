@@ -22,6 +22,7 @@
 		AFAD8BE3187A189F00FBFA00 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAD8BC2187A189F00FBFA00 /* UIKit.framework */; };
 		AFAD8BEB187A189F00FBFA00 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AFAD8BE9187A189F00FBFA00 /* InfoPlist.strings */; };
 		AFAD8BED187A189F00FBFA00 /* AnyiBeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AFAD8BEC187A189F00FBFA00 /* AnyiBeaconTests.m */; };
+		AFAD8BF8187A1A1300FBFA00 /* AIBBeaconRegionAny.m in Sources */ = {isa = PBXBuildFile; fileRef = AFAD8BF7187A1A1300FBFA00 /* AIBBeaconRegionAny.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		AFAD8BE8187A189F00FBFA00 /* AnyiBeaconTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AnyiBeaconTests-Info.plist"; sourceTree = "<group>"; };
 		AFAD8BEA187A189F00FBFA00 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AFAD8BEC187A189F00FBFA00 /* AnyiBeaconTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnyiBeaconTests.m; sourceTree = "<group>"; };
+		AFAD8BF6187A1A1300FBFA00 /* AIBBeaconRegionAny.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIBBeaconRegionAny.h; sourceTree = "<group>"; };
+		AFAD8BF7187A1A1300FBFA00 /* AIBBeaconRegionAny.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIBBeaconRegionAny.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 				AFAD8BD7187A189F00FBFA00 /* AIBViewController.m */,
 				AFAD8BD9187A189F00FBFA00 /* Images.xcassets */,
 				AFAD8BC5187A189F00FBFA00 /* Supporting Files */,
+				AFAD8BF6187A1A1300FBFA00 /* AIBBeaconRegionAny.h */,
+				AFAD8BF7187A1A1300FBFA00 /* AIBBeaconRegionAny.m */,
 			);
 			path = AnyiBeacon;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 				AFAD8BCB187A189F00FBFA00 /* main.m in Sources */,
 				AFAD8BD8187A189F00FBFA00 /* AIBViewController.m in Sources */,
 				AFAD8BCF187A189F00FBFA00 /* AIBAppDelegate.m in Sources */,
+				AFAD8BF8187A1A1300FBFA00 /* AIBBeaconRegionAny.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +481,7 @@
 				AFAD8BF2187A18A000FBFA00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AFAD8BF3187A18A000FBFA00 /* Build configuration list for PBXNativeTarget "AnyiBeaconTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +490,7 @@
 				AFAD8BF5187A18A000FBFA00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
