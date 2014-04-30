@@ -54,7 +54,7 @@
 	
 	//[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellIdentifier];
 	
-	self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"Change order" style:UIBarButtonItemStyleBordered target:self action:@selector(changeOrdenation)];
+	self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"Order by major/minor" style:UIBarButtonItemStyleBordered target:self action:@selector(changeOrdenation)];
 }
 
 - (void) changeOrdenation{
@@ -75,6 +75,7 @@
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
 {
     NSLog(@"locationManagerDidChangeAuthorizationStatus: %d", status);
+	[[[UIAlertView alloc] initWithTitle:@"Authoritzation Status changed" message:[[NSString alloc] initWithFormat:@"Location Manager did change authorization status to: %d", status] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
@@ -121,6 +122,7 @@
 - (void)locationManager:(CLLocationManager *)manager rangingBeaconsDidFailForRegion:(CLBeaconRegion *)region withError:(NSError *)error
 {
     NSLog(@"locationManager:%@ rangingBeaconsDidFailForRegion:%@ withError:%@", manager, region, error);
+	[[[UIAlertView alloc] initWithTitle:@"Ranging Beacons fail" message:[[NSString alloc] initWithFormat:@"Ranging beacons fail with error: %@", error] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
 }
 
 #pragma mark - Table view data source
