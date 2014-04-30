@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9BCCD2BF19112D9F00851BC6 /* AIBMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCCD2BE19112D9F00851BC6 /* AIBMainTableViewController.m */; };
+		9BCCD2C2191131C700851BC6 /* AIBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BCCD2C1191131C700851BC6 /* AIBUtils.m */; };
 		AFAD8BBF187A189F00FBFA00 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAD8BBE187A189F00FBFA00 /* Foundation.framework */; };
 		AFAD8BC1187A189F00FBFA00 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAD8BC0187A189F00FBFA00 /* CoreGraphics.framework */; };
 		AFAD8BC3187A189F00FBFA00 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAD8BC2187A189F00FBFA00 /* UIKit.framework */; };
@@ -15,7 +17,6 @@
 		AFAD8BCF187A189F00FBFA00 /* AIBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFAD8BCE187A189F00FBFA00 /* AIBAppDelegate.m */; };
 		AFAD8BD2187A189F00FBFA00 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFAD8BD0187A189F00FBFA00 /* Main_iPhone.storyboard */; };
 		AFAD8BD5187A189F00FBFA00 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFAD8BD3187A189F00FBFA00 /* Main_iPad.storyboard */; };
-		AFAD8BD8187A189F00FBFA00 /* AIBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFAD8BD7187A189F00FBFA00 /* AIBViewController.m */; };
 		AFAD8BDA187A189F00FBFA00 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFAD8BD9187A189F00FBFA00 /* Images.xcassets */; };
 		AFAD8BE1187A189F00FBFA00 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAD8BE0187A189F00FBFA00 /* XCTest.framework */; };
 		AFAD8BE2187A189F00FBFA00 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAD8BBE187A189F00FBFA00 /* Foundation.framework */; };
@@ -36,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9BCCD2BD19112D9F00851BC6 /* AIBMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIBMainTableViewController.h; sourceTree = "<group>"; };
+		9BCCD2BE19112D9F00851BC6 /* AIBMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIBMainTableViewController.m; sourceTree = "<group>"; };
+		9BCCD2C0191131C700851BC6 /* AIBUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIBUtils.h; sourceTree = "<group>"; };
+		9BCCD2C1191131C700851BC6 /* AIBUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIBUtils.m; sourceTree = "<group>"; };
 		AFAD8BBB187A189F00FBFA00 /* AnyiBeacon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnyiBeacon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFAD8BBE187A189F00FBFA00 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AFAD8BC0187A189F00FBFA00 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,8 +53,6 @@
 		AFAD8BCE187A189F00FBFA00 /* AIBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AIBAppDelegate.m; sourceTree = "<group>"; };
 		AFAD8BD1187A189F00FBFA00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		AFAD8BD4187A189F00FBFA00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		AFAD8BD6187A189F00FBFA00 /* AIBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AIBViewController.h; sourceTree = "<group>"; };
-		AFAD8BD7187A189F00FBFA00 /* AIBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AIBViewController.m; sourceTree = "<group>"; };
 		AFAD8BD9187A189F00FBFA00 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AFAD8BDF187A189F00FBFA00 /* AnyiBeaconTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnyiBeaconTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFAD8BE0187A189F00FBFA00 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -117,16 +120,18 @@
 		AFAD8BC4187A189F00FBFA00 /* AnyiBeacon */ = {
 			isa = PBXGroup;
 			children = (
+				9BCCD2BD19112D9F00851BC6 /* AIBMainTableViewController.h */,
+				9BCCD2BE19112D9F00851BC6 /* AIBMainTableViewController.m */,
 				AFAD8BCD187A189F00FBFA00 /* AIBAppDelegate.h */,
 				AFAD8BCE187A189F00FBFA00 /* AIBAppDelegate.m */,
 				AFAD8BD0187A189F00FBFA00 /* Main_iPhone.storyboard */,
 				AFAD8BD3187A189F00FBFA00 /* Main_iPad.storyboard */,
-				AFAD8BD6187A189F00FBFA00 /* AIBViewController.h */,
-				AFAD8BD7187A189F00FBFA00 /* AIBViewController.m */,
 				AFAD8BD9187A189F00FBFA00 /* Images.xcassets */,
 				AFAD8BC5187A189F00FBFA00 /* Supporting Files */,
 				AFAD8BF6187A1A1300FBFA00 /* AIBBeaconRegionAny.h */,
 				AFAD8BF7187A1A1300FBFA00 /* AIBBeaconRegionAny.m */,
+				9BCCD2C0191131C700851BC6 /* AIBUtils.h */,
+				9BCCD2C1191131C700851BC6 /* AIBUtils.m */,
 			);
 			path = AnyiBeacon;
 			sourceTree = "<group>";
@@ -260,9 +265,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFAD8BCB187A189F00FBFA00 /* main.m in Sources */,
-				AFAD8BD8187A189F00FBFA00 /* AIBViewController.m in Sources */,
 				AFAD8BCF187A189F00FBFA00 /* AIBAppDelegate.m in Sources */,
 				AFAD8BF8187A1A1300FBFA00 /* AIBBeaconRegionAny.m in Sources */,
+				9BCCD2C2191131C700851BC6 /* AIBUtils.m in Sources */,
+				9BCCD2BF19112D9F00851BC6 /* AIBMainTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

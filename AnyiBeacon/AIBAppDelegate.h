@@ -6,13 +6,10 @@
 //  Copyright (c) 2014 Sandeep Mistry. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
-#import <CoreLocation/CoreLocation.h>
-
-@interface AIBAppDelegate : UIResponder <UIApplicationDelegate, CLLocationManagerDelegate>
+@interface AIBAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
