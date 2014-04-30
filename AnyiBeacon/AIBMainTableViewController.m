@@ -9,6 +9,7 @@
 #import "AIBMainTableViewController.h"
 #import "AIBBeaconRegionAny.h"
 #import "AIBUtils.h"
+#import "AIBDetailViewController.h"
 
 #define  kCellIdentifier @"cellBeaconIdentifier"
 
@@ -19,6 +20,7 @@
 @property(nonatomic, strong) CLLocationManager* locationManager;
 @property(nonatomic, strong) NSArray*			listUUID;
 @property(nonatomic)		 BOOL				sortByMajorMinor;
+@property(nonatomic, retain) CLBeacon*			selectedBeacon;
 @end
 
 @implementation AIBMainTableViewController
@@ -197,15 +199,27 @@
 }
 */
 
-/*
-#pragma mark - Navigation
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+	NSString* key=[_listUUID objectAtIndex:[indexPath indexAtPosition:0]];
+	_selectedBeacon=[[_beaconsDict objectForKey:key] objectAtIndex:[indexPath indexAtPosition:1]];
+	//[self performSegueWithIdentifier:@"detail" sender:self];
+	AIBDetailViewController* detail=[self.storyboard instantiateViewControllerWithIdentifier:@"detail"];
+	detail.beacon=_selectedBeacon;
+	[self.navigationController pushViewController:detail animated:YES];
+}
 
+
+#pragma mark - Navigation
+/*
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+	AIBDetailViewController* detail=[segue destinationViewController];
+	detail.beacon=_selectedBeacon;
+	
 }
-*/
+//*/
 
 @end
