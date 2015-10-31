@@ -11,9 +11,11 @@
 // https://github.com/nst/iOS-Runtime-Headers/blob/master/Frameworks/CoreLocation.framework/CLRegion.h
 struct ClientRegion {
     BOOL identifier[512];
+    BOOL onBehalfOfIdentifier[512];
     int type;
     bool notifyOnEntry;
     bool notifyOnExit;
+    bool conservativeEntry;
     union {
         struct {
             BOOL proximityUUID[512];
@@ -29,6 +31,7 @@ struct ClientRegion {
             } center;
             double radius;
             double desiredAccuracy;
+            int referenceFrame;
         } circularAttributes;
     } ;
 };
