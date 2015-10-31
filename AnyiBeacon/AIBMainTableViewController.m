@@ -52,6 +52,7 @@
 	self.sortByMajorMinor=NO;
 	
 	AIBBeaconRegionAny *beaconRegionAny = [[AIBBeaconRegionAny alloc] initWithIdentifier:@"Any"];
+	[self.locationManager requestWhenInUseAuthorization];
 	[self.locationManager startRangingBeaconsInRegion:beaconRegionAny];
 	
 	//[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellIdentifier];
