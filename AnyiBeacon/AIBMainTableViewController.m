@@ -16,33 +16,22 @@
 @import CoreLocation;
 
 @interface AIBMainTableViewController ()<CLLocationManagerDelegate>
+
 @property(nonatomic, strong) NSDictionary*		beaconsDict;
 @property(nonatomic, strong) CLLocationManager* locationManager;
 @property(nonatomic, strong) NSArray*			listUUID;
 @property(nonatomic)		 BOOL				sortByMajorMinor;
 @property(nonatomic, retain) CLBeacon*			selectedBeacon;
+
 @end
 
 @implementation AIBMainTableViewController
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-		
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
     self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 	
 	self.locationManager = [[CLLocationManager alloc] init];
 	self.locationManager.delegate = self;
@@ -54,10 +43,8 @@
 	AIBBeaconRegionAny *beaconRegionAny = [[AIBBeaconRegionAny alloc] initWithIdentifier:@"Any"];
 	[self.locationManager requestWhenInUseAuthorization];
 	[self.locationManager startRangingBeaconsInRegion:beaconRegionAny];
-	
-	//[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellIdentifier];
-	
-	self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"Order by major/minor" style:UIBarButtonItemStyleBordered target:self action:@selector(changeOrdenation)];
+		
+	self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"Order by major/minor" style:UIBarButtonItemStylePlain target:self action:@selector(changeOrdenation)];
 }
 
 - (void) changeOrdenation{
@@ -69,23 +56,21 @@
 	}
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
 {
     NSLog(@"locationManagerDidChangeAuthorizationStatus: %d", status);
-	[[[UIAlertView alloc] initWithTitle:@"Authoritzation Status changed" message:[[NSString alloc] initWithFormat:@"Location Manager did change authorization status to: %d", status] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
+    
+    [UIAlertController alertControllerWithTitle:@"Authoritzation Status changed"
+                                        message:[[NSString alloc] initWithFormat:@"Location Manager did change authorization status to: %d", status]
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    
 }
 
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
 {
-    //NSLog(@"locationManager:%@ didRangeBeacons:%@ inRegion:%@",manager, beacons, region);
-	//_listBeacons=beacons;
-	NSMutableArray* listUuid=[[NSMutableArray alloc] init];
+    NSLog(@"locationManager:%@ didRangeBeacons:%@ inRegion:%@",manager, beacons, region);
+
+    NSMutableArray* listUuid=[[NSMutableArray alloc] init];
 	NSMutableDictionary* beaconsDict=[[NSMutableDictionary alloc] init];
 	for (CLBeacon* beacon in beacons) {
 		NSString* uuid=[beacon.proximityUUID UUIDString];
@@ -124,8 +109,11 @@
 
 - (void)locationManager:(CLLocationManager *)manager rangingBeaconsDidFailForRegion:(CLBeaconRegion *)region withError:(NSError *)error
 {
-    NSLog(@"locationManager:%@ rangingBeaconsDidFailForRegion:%@ withError:%@", manager, region, error);
-	[[[UIAlertView alloc] initWithTitle:@"Ranging Beacons fail" message:[[NSString alloc] initWithFormat:@"Ranging beacons fail with error: %@", error] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
+     NSLog(@"locationManager:%@ rangingBeaconsDidFailForRegion:%@ withError:%@", manager, region, error);
+    
+    [UIAlertController alertControllerWithTitle:@"Ranging Beacons fail"
+                                        message:[[NSString alloc] initWithFormat:@"Ranging beacons fail with error: %@", error]
+                                 preferredStyle:UIAlertControllerStyleAlert];
 }
 
 #pragma mark - Table view data source
@@ -149,10 +137,6 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
 	
-	
-	/*if (cell == nil){
-		cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kCellIdentifier];
-	}//*/
 	NSString* key=[_listUUID objectAtIndex:[indexPath indexAtPosition:0]];
 	CLBeacon* beacon=[[_beaconsDict objectForKey:key] objectAtIndex:[indexPath indexAtPosition:1]];
 	cell.textLabel.text=[[NSString alloc] initWithFormat:@"M:%@ m:%@", beacon.major, beacon.minor];
@@ -162,65 +146,13 @@
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 	NSString* key=[_listUUID objectAtIndex:[indexPath indexAtPosition:0]];
 	_selectedBeacon=[[_beaconsDict objectForKey:key] objectAtIndex:[indexPath indexAtPosition:1]];
-	//[self performSegueWithIdentifier:@"detail" sender:self];
-	AIBDetailViewController* detail=[self.storyboard instantiateViewControllerWithIdentifier:@"detail"];
+
+    AIBDetailViewController* detail=[self.storyboard instantiateViewControllerWithIdentifier:@"detail"];
 	detail.beacon=_selectedBeacon;
 	[self.navigationController pushViewController:detail animated:YES];
 }
-
-
-#pragma mark - Navigation
-/*
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-	AIBDetailViewController* detail=[segue destinationViewController];
-	detail.beacon=_selectedBeacon;
-	
-}
-//*/
 
 @end

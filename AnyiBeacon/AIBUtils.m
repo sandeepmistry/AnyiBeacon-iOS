@@ -7,12 +7,6 @@
 //
 
 #import "AIBUtils.h"
-/*
- CLProximityUnknown,
- CLProximityImmediate,
- CLProximityNear,
- CLProximityFar
- //*/
 
 #define kPImmediate		@"CLProximityImmediate"
 #define kPNear			@"CLProximityNear"
